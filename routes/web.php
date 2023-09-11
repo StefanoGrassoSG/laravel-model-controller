@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+//controllers
+use App\Http\Controllers\Guest\PageController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,10 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [PageController::class, 'index'])->name('movies.index');
 
-Route::get('/about', function() {
-    return view('about');
-});
+Route::get('/about', [PageController::class, 'about']);
