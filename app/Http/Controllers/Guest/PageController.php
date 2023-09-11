@@ -14,12 +14,12 @@ class PageController extends Controller
     public function index() 
     {   
         $movies= Movie::all();
-        dd($movies);
-        return view('home');
+        
+        return view('home', compact('movies'));
     }
 
     public function about($id) 
     {
-        
+        return view('about')
     }
 }
